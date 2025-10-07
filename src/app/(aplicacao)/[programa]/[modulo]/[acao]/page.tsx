@@ -6,7 +6,7 @@ import { useClients } from "@/hooks/useClients";
 import { useMenu } from "@/hooks/useMenu";
 import { useProducts } from "@/hooks/useProducts";
 import { IMenuItem } from "@/interface/IMenu";
-import { Spin, Table } from "antd";
+import { Spin } from "antd";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -21,7 +21,7 @@ interface PageParams {
 export default function Home() {
 
     const params = useParams<PageParams>();
-    const { programa, modulo, acao } = params;
+    const { programa, modulo } = params;
 
     const activeModule = modulo;
 

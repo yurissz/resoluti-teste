@@ -1,23 +1,24 @@
 "use client"
 
 import { LateralSideBar } from "@/components/LateralSideBar";
-import { useClients } from "@/hooks/useClients";
 import { useMenu } from "@/hooks/useMenu";
-import { useProducts } from "@/hooks/useProducts";
-import { useState } from "react";
+import { Spin } from "antd";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-    const { data: menu, isLoading, isError } = useMenu()
+    const { data: menu, isLoading, isError } = useMenu();
 
-    const [clientFilters] = useState<{ nome?: string; status?: string }>({});
-    const { data: clientsData } = useClients(clientFilters);
 
-    const [productFilters] = useState<{ produto?: string }>({});
-    const { data: productsData } = useProducts(productFilters);
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-screen"><Spin size="large" /></div>;
+    }
+
+    if (isError) return <div className="p-8 text-red-500">Erro ao carregar menu</div>;
+
     return (
         <section className="relative min-h-screen flex">
-            <LateralSideBar clients={clientsData} products={productsData}
-                menu={menu} />
+            <LateralSideBar
+                menu={menu}
+            />
             <main className="flex-1 ml-64">
                 {children}
             </main>
