@@ -1,0 +1,5 @@
+{
+    "/api/menu": "/menu",
+    "/api/financeiro/clientes/listar": "/financeiro_clientes",
+    "/api/estoque/produtos/listar": "/estoque_produtos"
+}

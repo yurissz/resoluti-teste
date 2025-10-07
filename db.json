@@ -1,0 +1,108 @@
+{
+    "menu": [
+        {
+            "programa": "financeiro",
+            "modulo": "clientes",
+            "acoes": [
+                "listar",
+                "cadastrar"
+            ],
+            "columns": [
+                {
+                    "title": "ID",
+                    "dataIndex": "id"
+                },
+                {
+                    "title": "Nome",
+                    "dataIndex": "nome",
+                    "sorter": true
+                },
+                {
+                    "title": "Email",
+                    "dataIndex": "email"
+                },
+                {
+                    "title": "Status",
+                    "dataIndex": "status"
+                }
+            ],
+            "filters": [
+                {
+                    "type": "input",
+                    "name": "nome",
+                    "label": "Nome"
+                },
+                {
+                    "type": "select",
+                    "name": "status",
+                    "label": "Status",
+                    "options": [
+                        "Ativo",
+                        "Inativo"
+                    ]
+                }
+            ]
+        },
+        {
+            "programa": "estoque",
+            "modulo": "produtos",
+            "acoes": [
+                "listar",
+                "cadastrar"
+            ],
+            "columns": [
+                {
+                    "title": "ID",
+                    "dataIndex": "id"
+                },
+                {
+                    "title": "Produto",
+                    "dataIndex": "produto"
+                },
+                {
+                    "title": "Preço",
+                    "dataIndex": "preco"
+                }
+            ],
+            "filters": [
+                {
+                    "type": "input",
+                    "name": "produto",
+                    "label": "Produto"
+                }
+            ]
+        }
+    ],
+    "financeiro_clientes": [
+        {
+            "id": 1,
+            "nome": "Maria Silva",
+            "email": "maria@email.com",
+            "status": "Ativo"
+        },
+        {
+            "id": 2,
+            "nome": "João Souza",
+            "email": "joao@email.com",
+            "status": "Inativo"
+        },
+        {
+            "id": 3,
+            "nome": "Ana",
+            "email": "ana@email.com",
+            "status": "Ativo"
+        }
+    ],
+    "estoque_produtos": [
+        {
+            "id": 1,
+            "produto": "Teclado",
+            "preco": 120.5
+        },
+        {
+            "id": 2,
+            "produto": "Mouse",
+            "preco": 60.0
+        }
+    ]
+}
