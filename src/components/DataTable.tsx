@@ -1,9 +1,10 @@
+import { IClient, IProduct } from "@/interface/IDataSource";
 import { ConfigProvider, Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 
 
 interface DataTableProps {
-    dataSource: any[];
+    dataSource: IClient[] | IProduct[];
     columns: ColumnsType;
 }
 

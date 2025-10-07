@@ -5,7 +5,8 @@ import { FilterForm } from "@/components/FilterForm";
 import { useClients } from "@/hooks/useClients";
 import { useMenu } from "@/hooks/useMenu";
 import { useProducts } from "@/hooks/useProducts";
-import { IMenuItem } from "@/interface/IMenu";
+import { IClient, IProduct } from "@/interface/IDataSource";
+import { IColumn, IFilter, IMenuItem } from "@/interface/IMenu";
 import { Spin } from "antd";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -33,9 +34,9 @@ export default function Home() {
     const [productFilters, setProductFilters] = useState<{ produto?: string }>({});
     const { data: productsData } = useProducts(productFilters);
 
-    const [columns, setColumns] = useState<any[]>([]);
-    const [dataSource, setDataSource] = useState<any[]>([]);
-    const [filters, setFilters] = useState<any[]>([])
+    const [columns, setColumns] = useState<IColumn[]>([]);
+    const [dataSource, setDataSource] = useState<IProduct[] | IClient[]>([]);
+    const [filters, setFilters] = useState<IFilter[]>([])
 
 
     useEffect(() => {

@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://localhost:4000"
+    baseURL: "http://localhost:4000",
+    headers: {
+        'Content-Type': 'application/json',
+    },
 })
 
 export const getMenu = async () => {
@@ -22,3 +25,4 @@ export const getClientsData = async (filters?: { nome?: string; status?: string 
     })
     return data
 }
+

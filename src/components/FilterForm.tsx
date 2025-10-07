@@ -4,13 +4,13 @@ import { Form, Input, Select, Button, Space } from "antd";
 
 interface FilterFormProps {
     filters: IFilter[],
-    onFilter: (values: Record<string, any>) => void;
+    onFilter: (values: Record<string, string>) => void;
 }
 
 export function FilterForm({ filters, onFilter }: FilterFormProps) {
     const [form] = Form.useForm();
 
-    const handleFinish = (values: Record<string, any>) => {
+    const handleFinish = (values: Record<string, string>) => {
         onFilter(values);
     };
 
