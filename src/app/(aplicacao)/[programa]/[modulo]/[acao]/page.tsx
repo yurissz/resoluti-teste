@@ -40,6 +40,7 @@ export default function Home() {
 
 
     useEffect(() => {
+
         if (!menu || !programa) return;
 
         const menuItem = menu.find((item: IMenuItem) => item.programa === programa || item.modulo === activeModule);
@@ -52,27 +53,13 @@ export default function Home() {
             setFilters([]);
             setDataSource([]);
         }
-    }, [menu, programa]);
 
-
-
-    useEffect(() => {
-        console.log(module)
         if (programa === "financeiro" && clientsData) {
             setDataSource(clientsData);
         } else if (programa === "estoque" && productsData) {
             setDataSource(productsData);
         }
-    }, [programa, clientsData, productsData]);
-
-
-    useEffect(() => {
-        if (programa === "financeiro") {
-            setProductFilters({});
-        } else if (programa === "estoque") {
-            setClientFilters({});
-        }
-    }, [programa]);
+    }, [menu, programa, clientsData, productsData]);
 
 
 
