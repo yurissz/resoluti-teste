@@ -7,6 +7,8 @@
 
  TanStack Query e Axios
 
+ API Mockada com JSON Server
+
 
 ### Arquitetura de navegação
   A navegação no projeto é totalmente baseada em rotas dinâmicas, seguindo o padrão: /aplicacao/[programa]/[modulo]/[acao].
